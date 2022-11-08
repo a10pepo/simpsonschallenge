@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  pythonclient:
+    build: python_client
+    volumes:
+      - data:/datafolder
+  jupyter:
+    image: 'jupyter/scipy-notebook'
+    ports:
+      - '8888:8888'
+    volumes:
+      - data:/datafolder
+
+volumes:
+  data:
